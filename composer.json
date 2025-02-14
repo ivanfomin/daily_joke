@@ -1,0 +1,24 @@
+{
+  "name": "ioan/daily_joke",
+  "description": "Joke of the day",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "ioan",
+      "email": "la-verne@mail.ru"
+    }
+  ],
+  "require": {
+    "ext-pdo": "*"
+  }
+  ,
+  "require-dev": {
+    "roave/security-advisories": "dev-latest"
+  },
+  "autoload": {
+    "psr-4": {
+      "DailyJoke\\": "src/"
+    }
+  }
+}
