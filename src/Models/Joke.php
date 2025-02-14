@@ -24,18 +24,16 @@ class Joke extends Model
 
     public static function findTodayJoke(): int
     {
-        var_dump(getdate()); die;
         $current = (int)getdate()['yday'];
         $data = parse_ini_file(__DIR__ . '/../../current_day.ini');
         $id = (int)$data['id'];
+        $day = (int)$data['day'];
         $db = Db::instance();
         $lastId = $db->query('SELECT MAX(id) AS id FROM ' . self::TABLE)[0]->id;
-        if ($id >= $lastId) {
-            $id = 1;
-        }
 
-        if ((int)$data['day'] !== $current) {
-            if ($id >= $lastId) {
+        if ( $current != $day || $id > $lastId) {
+
+            if ($id > $lastId) {
                 $id = 1;
             } else {
                 $sql = 'SELECT id FROM ' . self::TABLE . ' WHERE id = (SELECT min(id) FROM ' . self::TABLE . ' WHERE id > ' . $id . ');';
@@ -43,6 +41,7 @@ class Joke extends Model
             }
             file_put_contents(__DIR__ . '/../../current_day.ini', 'day=' . $current . PHP_EOL . 'id=' . $id);
         }
+
         return $id;
     }
 
