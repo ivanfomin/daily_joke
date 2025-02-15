@@ -48,7 +48,7 @@ class Joke extends Model
     public function validateContent($content)
     {
 
-        if ((mb_strlen($content) < 5) || mb_strlen($content) > 5000) {
+        if ((mb_strlen($content) < 5) || mb_strlen($content) > 6000) {
             throw new \Exception('Length of the content is not compatible!');
         }
     }
