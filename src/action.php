@@ -21,6 +21,7 @@ if (isset($_GET['update'])) {
 
 } else if (isset($_GET['insert'])) {
     $joke = new Joke();
+
     try {
         $joke->fill(['content' => $content]);
     } catch (\Exceptions\MultiException $exceptions) {

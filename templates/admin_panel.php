@@ -8,7 +8,7 @@
 </head>
 <body>
 <?php
-var_dump(getdate()['yday']) . PHP_EOL;
+echo '<h1> Панель администратора </h1>';
 foreach ($this->jokes as $joke) { ?>
     <div>
         <form method="GET" action="../src/action.php">

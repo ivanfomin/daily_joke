@@ -7,7 +7,7 @@ use DailyJoke\Db;
 class Joke extends Model
 {
     protected const TABLE = 'jokes';
-    public string $content;
+    public string $content = '';
     public int|null $likes;
 
 
@@ -45,7 +45,6 @@ class Joke extends Model
         return $id;
     }
 
-
     public function validateContent($content)
     {
 
@@ -53,4 +52,6 @@ class Joke extends Model
             throw new \Exception('Length of the content is not compatible!');
         }
     }
+
+
 }
