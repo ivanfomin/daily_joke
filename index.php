@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
+session_start();
 
 $ctrl = $_GET['ctrl'] ?? 'Joke';
 $class = '\\DailyJoke\\Controllers\\' . $ctrl;

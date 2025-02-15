@@ -19,54 +19,39 @@
             crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/templates/style.css">
     <title>Анекдоты</title>
 </head>
 <body class="d-flex flex-column min-vh-100">
 <div class="text-center pb-2 mb-4  border-bottom border-danger">
-    <h1>
-        Анекдот дня
-    </h1>
+
+    <img src="/templates/media/joke.jpg" width="52" style="margin-top: 10px" class=" center" alt="Joke_Logo">
+    <h1>Ежедневный анекдот</h1>
+
 </div>
-<div class="wrapper flex-grow-1">
+<div class="d-flex justify-content-center"> <!--wrapper flex-grow-1 text-center-->
     <?php
 
-    echo '<div class="p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end cont">' .
+    echo '<div class="p-3 bg-info bg-opacity-10 border border-info border-start-0
+ rounded-end ">
+        <div class="col-lg-6  p-3 text-right cont">' .
         $this->joke->content .
-        '</div>';
-    echo '<br><button type="button" class="btn btn-success btn-sm">Нравится<span class="badge badge-light count">' . $this->joke->likes . '</span></button>';
-    echo '<span hidden="hidden" class="id_joke">' . $this->joke->id . '</span>';
+        '</div>
+        <div style="margin-left: 1%"><button type="button" class="btn btn-success btn-sm">Нравится<span
+                    class="badge badge-light count">' . $this->joke->likes . '</span></button></div>
+        </div>
+      <span hidden="hidden" class="id_joke">' . $this->joke->id . '</span>
+      <span hidden="hidden" class="session">' . session_id() . '</span>';
 
     ?>
 </div>
-
-<footer>
-    © 2025 Ivan Fomin Copyright
-</footer>
-
-<script>
-
-    $(document).ready(function () {
-        $('button.btn').on('click', function () {
-            let cnt = Number($('span.count').text());
-            let id_joke = $('span.id_joke').text();
-            let cont = $('div.cont').text();
-            cnt++;
-            $.ajax({
-                method: 'get',
-                url: '../src/action.php',
-                data: {likes: cnt, id: id_joke, content: cont, update: true},
-                success: function (data) {
-                    //window.alert(content);
-                    $('span.count').text(cnt);
-                }
-
-            });
-        })
-    });
-
-</script>
+<br>
 
 
 </body>
+<?php
+include 'templates/foot.php';
+?>
+
 </html>
 
