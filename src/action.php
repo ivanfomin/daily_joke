@@ -12,6 +12,7 @@ if (isset($_GET['update'])) {
     $joke = Joke::findById($id);
     $joke->likes = $likes;
     $joke->content = $content;
+
     $joke->save();
 
 } else if (isset($_GET['delete'])) {
