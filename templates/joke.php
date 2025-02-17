@@ -32,12 +32,12 @@
 <div class="d-flex justify-content-center"> <!--wrapper flex-grow-1 text-center-->
     <?php
 
-    echo '<div class="p-3 bg-info bg-opacity-10 border border-info border-start-0
+    echo '<div class="p-2 bg-info bg-opacity-10 border border-info border-start-0
  rounded-end ">
-        <div class="col-lg-6  p-3 text-right cont">' .
+        <div class="col-lg-6  p-2 text-right cont">' .
         $this->joke->content .
         '</div>
-        <div style="margin-left: 1%"><button type="button" class="btn btn-success btn-sm">Нравится<span
+        <div><button type="button" class="btn btn-success btn-sm">Нравится<span
                     class="badge badge-light count">' . $this->joke->likes . '</span></button></div>
         </div>
       <span hidden="hidden" class="id_joke">' . $this->joke->id . '</span>

@@ -9,6 +9,7 @@ class Joke extends Base
 {
     public function __invoke($template = __DIR__ . '/../../templates/joke.php')
     {
+
         $id = Joke_Model::findTodayJoke();
 
         $this->view->joke = Joke_Model::findById($id);

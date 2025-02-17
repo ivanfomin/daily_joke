@@ -35,6 +35,7 @@ class Db
     public function query($sql, $class = \stdClass::class, $params = []): array|Joke
     {
         $sth = $this->dbh->prepare($sql);
+
         $sth->execute($params);
 
         // return $sth->fetch(\PDO::FETCH_ASSOC);
