@@ -7,7 +7,7 @@ use DailyJoke\Db;
 
 class Joke extends Base
 {
-    public function __invoke($template = __DIR__ . '/../../templates/joke.php')
+    public function __invoke( $page = 1, $template = __DIR__ . '/../../templates/joke.php')
     {
 
         $id = Joke_Model::findTodayJoke();

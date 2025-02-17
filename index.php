@@ -3,11 +3,12 @@ require __DIR__ . '/vendor/autoload.php';
 session_start();
 
 $ctrl = $_GET['ctrl'] ?? 'Joke';
+$page = $_GET['act'] ?? 1;
 $class = '\\DailyJoke\\Controllers\\' . $ctrl;
 
 try {
     $ctrl = new $class;
-    $ctrl();
+    $ctrl($page);
 
 } catch (\Exceptions\Http404Exception $ex) {
     http_response_code(404);

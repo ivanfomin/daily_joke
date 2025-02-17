@@ -53,5 +53,19 @@ class Joke extends Model
         }
     }
 
+    public static function countWords() : int
+    {
+        $db = Db::instance();
+        $sql = 'SELECT COUNT(1) as cnt  FROM jokes';
+        $data = $db->query($sql);
+        return $data[0]->cnt;
+    }
+
+    public static function findPage($start, $num) : array
+    {
+        $db = Db::instance();
+        $sql = 'SELECT * FROM jokes ORDER BY id LIMIT ' . $start . ',' . $num;
+        return $db->query($sql, self::class);
+    }
 
 }
