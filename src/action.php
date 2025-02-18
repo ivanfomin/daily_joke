@@ -49,5 +49,5 @@ if (isset($_GET['update'])) {
 }
 
 
-
-header('Location: /?ctrl=Admin');
+$page = (int)$_GET['page'];
+header("Location: /?ctrl=Admin&act=$page");
