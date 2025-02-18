@@ -6,6 +6,10 @@ $ctrl = $_GET['ctrl'] ?? 'Joke';
 $page = $_GET['act'] ?? 1;
 $class = '\\DailyJoke\\Controllers\\' . $ctrl;
 
+if (!class_exists($class)) {
+    $class = '\\DailyJoke\\Controllers\\Joke';
+}
+
 try {
     $ctrl = new $class;
     $ctrl($page);
