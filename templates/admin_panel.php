@@ -1,27 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-    <script
-            src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-            crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <meta charset="UTF-8">
-    <title>Админ панель</title>
-    <link rel="stylesheet" href="/templates/style.css">
-</head>
-<body>
 <?php
+include 'templates/parent.php';
 
 echo '<h1 class="text-center"> Панель администратора </h1>';
+?>
+<table style="width: 100%">
+    <thead>
+    <tr>
+        <td style="width: 6%" class="text-center"><b>ID</b></td>
+        <td style="width: 43%" class="text-center"><b>Анекдот</b></td>
+        <td style="width: 5%" class="text-center"><b>Лайки</b></td>
+        <td style="width: 10%" class="text-center"><b>Изменить</b></td>
+        <td style="width: 10%"><b>Удалить</b></td>
+    </tr>
+    </thead>
+</table>
+<?php
 foreach ($this->jokes as $joke) { ?>
     <div class="list">
         <form method="GET" action="../src/action.php">
@@ -46,7 +39,7 @@ foreach ($this->jokes as $joke) { ?>
         $previous = $this->current - 1;
         echo '<li class="page-item "><a class="page-link" href="/?ctrl=Admin&act=' . $previous . '"> Предыдущая </a></li>';
 
-        for ($page = 1; $page < $this->pages; $page++) {
+        for ($page = 1; $page <= $this->pages; $page++) {
 
             if ($this->current == $page) {
                 echo '<li class="page-item active"><a class="page-link" href="/?ctrl=Admin&act=' . $page . '">' . $page . '</a></li>';

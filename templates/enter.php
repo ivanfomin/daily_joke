@@ -1,21 +1,25 @@
-<!doctype html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Вход в админ панель</title>
-</head>
-<body>
-<form>
+<?php
+include 'templates/parent.php';
+if (isset($_SESSION['message'])) {
+    echo '<h1 style="color: crimson">' . $_SESSION['message'] . '</h1>';
+}
+?>
+<div class="container">
+    <form class="form-inline" action="/templates/login.php" method="POST">
+        <label class="sr-only" for="inlineFormInputName2">Пароль</label>
+        <input type="password" name="password" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2"
+               placeholder="***">
 
-  <div class="form-group">
-    <label for="exampleInputPassword1">Пароль</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
+        <div class="form-check mb-2 mr-sm-2">
+            <input class="form-check-input" name="memory" type="checkbox" id="inlineFormCheck">
+            <label class="form-check-label" for="inlineFormCheck">
+                Remember me
+            </label>
+        </div>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-</body>
-</html>
+        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+    </form>
+</div>
+
+
+
