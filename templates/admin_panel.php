@@ -2,6 +2,7 @@
 include 'templates/parent.php';
 
 echo '<h1 class="text-center"> Панель администратора </h1>';
+
 ?>
 <table style="width: 100%">
     <thead>
@@ -25,6 +26,7 @@ foreach ($this->jokes as $joke) { ?>
                    style="width: 12%">
             <input onclick="return confirm('Вы точно хотите удалить?')" class="hover del" id="del" type="submit"
                    name="delete" value="Удалить" style="width: 10%">
+            <input hidden="hidden" name="page" value="<?=$this->current; ?>">
         </form>
     </div>
 <?php }

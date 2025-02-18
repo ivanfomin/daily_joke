@@ -16,14 +16,20 @@ abstract class Base
 
     protected function pagination($page = 1)
     {
-        if ($page <= 1 && empty($page)) {
+        $page = (int)$page;
+
+        if ($page <= 1 ) {
             $page = 1;
         }
 
         $this->view->count = Joke_Model::countWords();
-        $this->view->current = $page;
         $num = 10;
         $this->view->pages = (int)ceil($this->view->count / $num);
+        if ($page > $this->view->pages) {
+            $page = $this->view->pages;
+        }
+        $this->view->current = $page;
+
         if (empty($this->view->count) && $this->view->count < 0) {
             $page = 1;
         }

@@ -48,4 +48,6 @@ if (isset($_GET['update'])) {
     $joke->save();
 }
 
+
+
 header('Location: /?ctrl=Admin');
