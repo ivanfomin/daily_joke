@@ -74,7 +74,8 @@ foreach ($this->jokes as $joke) { ?>
     </form>
 </div>
 <br>
-<a class="wrap" href="/index.php">На главную</a>
-
+<div class="text-center">
+<a  href="/index.php">На главную</a>
+</div>
 </body>
 </html>
