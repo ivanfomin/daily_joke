@@ -79,6 +79,6 @@ foreach ($this->jokes as $joke) { ?>
 </div>
 
 
-<?php
-include 'templates/foot.php';
-?>
+
+
+
