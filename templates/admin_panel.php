@@ -8,9 +8,9 @@ echo '<h1 class="text-center"> Панель администратора </h1>';
     <thead>
     <tr>
         <td style="width: 6%" class="text-center"><b>ID</b></td>
-        <td style="width: 43%" class="text-center"><b>Анекдот</b></td>
-        <td style="width: 5%" class="text-center"><b>Лайки</b></td>
-        <td style="width: 10%" class="text-center"><b>Изменить</b></td>
+        <td style="width: 50%" class="text-center"><b>Анекдот</b></td>
+        <td style="width: 4%" class="text-center"><b>Лайки</b></td>
+        <td style="width: 12%" class="text-center"><b>Изменить</b></td>
         <td style="width: 10%"><b>Удалить</b></td>
     </tr>
     </thead>
@@ -26,7 +26,7 @@ foreach ($this->jokes as $joke) { ?>
                    style="width: 12%">
             <input onclick="return confirm('Вы точно хотите удалить?')" class="hover del" id="del" type="submit"
                    name="delete" value="Удалить" style="width: 10%">
-            <input hidden="hidden" name="page" value="<?=$this->current; ?>">
+            <input hidden="hidden" name="page" value="<?= $this->current; ?>">
         </form>
     </div>
 <?php }
@@ -75,7 +75,10 @@ foreach ($this->jokes as $joke) { ?>
 </div>
 <br>
 <div class="text-center">
-<a  href="/index.php">На главную</a>
+    <a href="/index.php">На главную</a>
 </div>
-</body>
-</html>
+
+
+<?php
+include 'templates/foot.php';
+?>

@@ -1,7 +1,7 @@
 <?php
 include 'templates/parent.php';
 ?>
-<body class="d-flex flex-column min-vh-100">
+
 
 <main>
 
@@ -28,10 +28,9 @@ include 'templates/parent.php';
 </main>
 
 
-</body>
 <?php
 include 'templates/foot.php';
 ?>
 
-</html>
+
 

@@ -23,3 +23,4 @@
     <link rel="stylesheet" type="text/css" href="/templates/css/style.css">
     <title>Анекдоты</title>
 </head>
+<body>

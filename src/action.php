@@ -44,6 +44,7 @@ if (isset($_GET['update'])) {
         include_once __DIR__ . '/../templates/multiexceptions.php';
         die();
     }
+    $_GET['page'] = PHP_INT_MAX;
 
     $joke->save();
 }

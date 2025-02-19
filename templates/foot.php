@@ -1,6 +1,8 @@
 <footer class="text-center p-3 footer" style="background-color: rgba(0, 0, 0, 0.05);">
     © 2025 | Ivan Fomin
 </footer>
+</body>
+</html>
 <script>
     $(document).ready(function () {
         $('button.dislike').on('click', function () {
