@@ -17,7 +17,7 @@ echo '<h1 class="text-center"> Панель администратора </h1>';
 </table>
 <?php
 foreach ($this->jokes as $joke) { ?>
-    <div class="list">
+    <div class="list text-center">
         <form method="GET" action="../src/action.php">
             <input readonly type="number" name="id" value="<?php echo $joke->id; ?>" style="width: 6%">
             <input type="text" name="content" value="<?php echo $joke->content; ?>" style="width: 60%">

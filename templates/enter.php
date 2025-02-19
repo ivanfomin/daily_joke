@@ -1,7 +1,7 @@
 <?php
 include 'templates/parent.php';
 if (isset($_SESSION['message'])) {
-    echo '<h1 style="color: crimson; margin-left: 16%">' . $_SESSION['message'] . '</h1>';
+    echo '<h1 style="color: crimson; margin-left: 300px">' . $_SESSION['message'] . '</h1>';
 }
 ?>
 <div class="container">

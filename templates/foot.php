@@ -3,12 +3,36 @@
 </footer>
 <script>
     $(document).ready(function () {
-        $('button.btn').on('click', function () {
-            let session = $('span.session').text();
-            if (localStorage.getItem('session') !== session) {
+        let session = $('span.session').text();
+        if (localStorage.getItem('session') !== session) {
+            $('button.minus').on('click', function () {
+
+
                 let cnt = Number($('span.count').text());
                 let id_joke = $('span.id_joke').text();
-                let cont = $('div.cont').text();
+                let cont = $('p.cont').text();
+                cnt--;
+                $.ajax({
+                    method: 'get',
+                    url: '../src/action.php',
+                    data: {likes: cnt, id: id_joke, content: cont, update: true},
+                    success: function (data) {
+                        $('span.count').text(cnt);
+                    },
+                    error: function (data) {
+                        window.alert(data);
+                    }
+
+                });
+
+            });
+
+            $('button.plus').on('click', function () {
+
+
+                let cnt = Number($('span.count').text());
+                let id_joke = $('span.id_joke').text();
+                let cont = $('p.cont').text();
                 cnt++;
                 $.ajax({
                     method: 'get',
@@ -22,10 +46,11 @@
                     }
 
                 });
-            }
-            localStorage.setItem('session', session);
 
-        })
+            })
+        }
+        localStorage.setItem('session', session);
+
     });
 
 </script>
