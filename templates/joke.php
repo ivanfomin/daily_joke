@@ -11,8 +11,8 @@ include 'templates/parent.php';
         <div class="col-lg-6 mx-auto">
             <p class="lead mb-4 cont"> <?= $this->joke->content; ?> </p>
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                <button type="button" class="btn btn-primary btn-lg px-4 gap-3 plus">Нравится</button>
-                <button type="button" class="btn btn-outline-secondary btn-lg px-4 minus">Не нравится</button>
+                <button type="button" class="btn btn-primary btn-lg px-4 gap-3 like">Нравится</button>
+                <button type="button" class="btn btn-outline-secondary btn-lg px-4 dislike">Не нравится</button>
                 <button disabled type="button" class="btn btn-success btn-sm">
 
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
