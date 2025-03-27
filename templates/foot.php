@@ -7,8 +7,7 @@
     $(document).ready(function () {
         $('button.dislike').on('click', function () {
             if (localStorage.getItem('dislike') === '0' || localStorage.getItem('dislike') === null) {
-      window.alert(localStorage.getItem('like'));
-            window.alert(localStorage.getItem('dislike'));
+
                 let cnt = Number($('span.count').text());
                 let id_joke = $('span.id_joke').text();
                 let cont = $('p.cont').text();
@@ -36,8 +35,6 @@
         });
 
         $('button.like').on('click', function () {
-            window.alert(localStorage.getItem('like'));
-            window.alert(localStorage.getItem('dislike'));
 
             if (localStorage.getItem('like') === '0' || localStorage.getItem('like') === null) {
                 let cnt = Number($('span.count').text());
